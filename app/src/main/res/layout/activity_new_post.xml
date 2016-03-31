@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.com.placesnap.controller.activity.NewPostActivity">
+
+    <include
+        layout="@layout/toolbar"/>
+
+    <android.support.v4.widget.Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/activity_vertical_margin" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/include_user_header"
+                layout="@layout/user_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Space
+                android:id="@+id/space_new_post_description"
+                android:layout_below="@id/include_user_header"
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <EditText
+                android:id="@+id/edittext_new_post_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/space_new_post_description"
+                android:padding="@dimen/activity_vertical_margin"
+                android:text="@string/post_description"
+                android:inputType="text"
+                android:alpha="0.6"
+                android:background="@android:color/transparent" />
+
+            <View
+                android:id="@+id/view_line_post_top"
+                android:layout_below="@id/edittext_new_post_description"
+                android:layout_width="match_parent"
+                android:background="@android:color/black"
+                android:alpha="0.10"
+                android:layout_height="1dp"/>
+
+            <ImageView
+                android:id="@+id/imageview_new_post_image"
+                android:layout_below="@id/view_line_post_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:id="@+id/view_line_post_bottom"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:background="@android:color/black"
+                android:alpha="0.10"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:id="@+id/textview_post_instruction"
+                android:text="@string/post_instruction"
+                android:layout_above="@id/view_line_post_bottom"
+                android:layout_below="@id/view_line_post_top"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:alpha="0.6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

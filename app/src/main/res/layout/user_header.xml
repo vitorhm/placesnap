@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:src="@drawable/teste2"
+        android:id="@+id/imageview_post_userpicture"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+
+    <TextView
+        android:id="@+id/textview_post_username"
+        android:layout_toRightOf="@id/imageview_post_userpicture"
+        android:layout_toEndOf="@id/imageview_post_userpicture"
+        android:layout_alignTop="@id/imageview_post_userpicture"
+        android:layout_alignBottom="@id/imageview_post_userpicture"
+        android:paddingLeft="@dimen/activity_vertical_margin"
+        android:paddingStart="@dimen/activity_vertical_margin"
+        android:paddingEnd="@dimen/activity_vertical_margin"
+        android:gravity="center_vertical"
+        android:text="Vitor Henrique"
+        android:textColor="@android:color/black"
+        android:singleLine="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
