@@ -67,7 +67,7 @@
                 android:layout_height="1dp"/>
 
             <TextView
-                android:id="@+id/textview_post_instruction"
+                android:id="@+id/textview_new_post_instruction"
                 android:text="@string/post_instruction"
                 android:layout_above="@id/view_line_post_bottom"
                 android:layout_below="@id/view_line_post_top"
