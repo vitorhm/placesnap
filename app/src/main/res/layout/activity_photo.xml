@@ -5,6 +5,14 @@
     android:layout_height="match_parent"
     tools:context="br.com.placesnap.controller.activity.PhotoActivity">
 
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:theme="@style/CustomActionBar"/>
+
     <FrameLayout
         android:id="@+id/camera_preview"
         android:layout_width="match_parent"

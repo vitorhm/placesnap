@@ -26,7 +26,8 @@
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
-            android:name=".controller.activity.PhotoActivity">
+            android:name=".controller.activity.PhotoActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

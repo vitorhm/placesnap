@@ -1,6 +1,7 @@
 package br.com.placesnap.controller.view;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.hardware.Camera;
 import android.util.Log;
 import android.view.Display;
@@ -35,47 +36,11 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
     public void surfaceCreated(SurfaceHolder holder) {
         // The Surface has been created, now tell the camera where to draw the preview.
-        previewCamera();
+        this.previewCamera();
     }
 
     public void surfaceDestroyed(SurfaceHolder holder) {
         // empty. Take care of releasing the Camera preview in your activity.
-    }
-
-    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height)
-    {
-        if (isPreviewRunning)
-        {
-            mCamera.stopPreview();
-        }
-
-        Camera.Parameters parameters = mCamera.getParameters();
-        Display display = ((WindowManager)mContext.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
-
-        if(display.getRotation() == Surface.ROTATION_0)
-        {
-            parameters.setPreviewSize(height, width);
-            mCamera.setDisplayOrientation(90);
-        }
-
-        if(display.getRotation() == Surface.ROTATION_90)
-        {
-            parameters.setPreviewSize(width, height);
-        }
-
-        if(display.getRotation() == Surface.ROTATION_180)
-        {
-            parameters.setPreviewSize(height, width);
-        }
-
-        if(display.getRotation() == Surface.ROTATION_270)
-        {
-            parameters.setPreviewSize(width, height);
-            mCamera.setDisplayOrientation(180);
-        }
-
-        mCamera.setParameters(parameters);
-        previewCamera();
     }
 
     public void previewCamera()
@@ -88,7 +53,42 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         }
         catch(Exception e)
         {
-            Log.d(this.getClass().getName(), "Cannot start preview", e);
+            Log.d("", "Cannot start preview", e);
         }
+    }
+
+    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+        if (isPreviewRunning)
+        {
+            mCamera.stopPreview();
+        }
+
+        Camera.Parameters parameters = mCamera.getParameters();
+        Display display = ((WindowManager)mContext.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+
+        if(display.getRotation() == Surface.ROTATION_0)
+        {
+//            parameters.setPreviewSize(height, width);
+            mCamera.setDisplayOrientation(90);
+        }
+
+        if(display.getRotation() == Surface.ROTATION_90)
+        {
+//            parameters.setPreviewSize(width, height);
+        }
+
+        if(display.getRotation() == Surface.ROTATION_180)
+        {
+//            parameters.setPreviewSize(height, width);
+        }
+
+        if(display.getRotation() == Surface.ROTATION_270)
+        {
+//            parameters.setPreviewSize(width, height);
+            mCamera.setDisplayOrientation(180);
+        }
+
+//        mCamera.setParameters(parameters);
+        previewCamera();
     }
 }
