@@ -13,6 +13,7 @@ import br.com.placesnap.controller.view.CameraPreview;
 
 public class PhotoActivity extends AppCompatActivity {
 
+    @SuppressWarnings("deprecation")
     private Camera mCamera;
     private CameraPreview mPreview;
 
@@ -25,6 +26,7 @@ public class PhotoActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         // Create an instance of Camera
+        super.onResume();
         mCamera = getCameraInstance();
 
         // Create our Preview view and set it as the content of our activity.
@@ -33,8 +35,6 @@ public class PhotoActivity extends AppCompatActivity {
             FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
             preview.addView(mPreview);
         }
-
-        super.onResume();
     }
 
     @Override
