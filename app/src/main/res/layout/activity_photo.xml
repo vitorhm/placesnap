@@ -17,12 +17,42 @@
         android:id="@+id/camera_preview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"/>
+        android:layout_below="@+id/toolbar">
+    </FrameLayout>
 
     <ImageView
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:src="@drawable/ic_camera_alt_white_36dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:id="@+id/imageview_camera_photo"
+        android:adjustViewBounds="true"
+        android:alpha="0.4" />
+
+    <ImageView
+        android:src="@drawable/ic_camera_front_white_36dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_width="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:layout_height="wrap_content"
         android:id="@+id/imageview_camera_rotate"
-        android:adjustViewBounds="true" />
+        android:adjustViewBounds="true"
+        android:alpha="0.4" />
+
+    <ImageView
+        android:src="@drawable/ic_flash_on_white_36dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageview_camera_flash"
+        android:adjustViewBounds="true"
+        android:alpha="0.4" />
 
 </RelativeLayout>

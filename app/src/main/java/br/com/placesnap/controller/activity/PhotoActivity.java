@@ -7,6 +7,7 @@ import android.hardware.Camera;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 import br.com.placesnap.R;
 import br.com.placesnap.controller.view.CameraPreview;
@@ -16,11 +17,14 @@ public class PhotoActivity extends AppCompatActivity {
     @SuppressWarnings("deprecation")
     private Camera mCamera;
     private CameraPreview mPreview;
+    private ImageView mImageViewPhoto, mImageViewRotateCamera, mImageViewFlash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo);
+
+        this.bindViews();
     }
 
     @Override
@@ -47,6 +51,12 @@ public class PhotoActivity extends AppCompatActivity {
         }
 
         super.onPause();
+    }
+
+    private void bindViews() {
+        mImageViewPhoto = (ImageView) findViewById(R.id.imageview_camera_photo);
+        mImageViewFlash = (ImageView) findViewById(R.id.imageview_camera_flash);
+        mImageViewRotateCamera = (ImageView) findViewById(R.id.imageview_camera_rotate);
     }
 
     private boolean checkCameraHardware(Context context) {
